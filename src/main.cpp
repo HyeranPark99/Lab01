@@ -30,7 +30,7 @@ int main() {
   ofstream myfile;
   myfile.open ("result.txt");
   ifstream in_stream;
-  in_stream.open("./Resource File/data2.csv"); //opening the file.
+  in_stream.open("data2.csv"); //opening the file.
   int count =0; 
 
   if (!in_stream.fail()) { //if the file is open
