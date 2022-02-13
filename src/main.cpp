@@ -27,8 +27,11 @@ int main() {
   vector<int>vYear;
   vector<float>vPrice;
 
+  // write a file 		
   ofstream myfile;
   myfile.open ("result.txt");
+
+  // read a file 
   ifstream in_stream;
   in_stream.open("data2.csv"); //opening the file.
   int count =0; 
@@ -39,7 +42,7 @@ int main() {
 
 	    while (in_stream) { //while the end of file is NOT reached
 		
-	    	//if(in_stream.eof())break;
+	    
 	     // Fields: sku,brand,category,year,price
 			count ++;
 	     getline(in_stream, sku, ',');
@@ -76,16 +79,24 @@ int main() {
    }
  
   //output values 
-  //cout << "Vector Size" << vSKU.size() << endl;
-  //cout << count<< endl;
   cout << "SKU" << "\t" << "Brand" << "\t" << "Catego" << "\t"<< "Year"<< "\t" << "Price" << endl; 
+
+  // write title line in the file 
   myfile << "SKU\t Brand\t Catego\t Year\t Price\n" ; 
 	
+  // print out values in each vectors 		
   for (int j = 1; j < vSKU.size()-1; j++) {
     cout << vSKU[j] << "\t" << vBrand[j] << "\t" << vCategory[j] << "\t" << vYear[j] << "\t"   << vPrice[j]<< endl;  
-    myfile << vSKU[j] << "\t  " << vBrand[j] << "\t  " << vCategory[j] << "\t\t" << vYear[j] << "\t  "   << vPrice[j] << "\n"; 
+    myfile << vSKU[j] << "\t  " << vBrand[j] << "\t  " << vCategory[j] << "\t\t" << vYear[j] << "\t  "   << vPrice[j] << "\n";  
   }
   
+
+  // Brand's average price
+  /*Since all the vectors size is same, and each sections's data is stored in the matching index,
+	create vectors that store each brands' index 
+	vBrandId : ABC brand's indexes
+	vBrandId : XYZ brand's indexes
+  */
   vector<int>vBrandId;
   vector<int>vBrandId2;
   for(int i = 0; i < vBrand.size()-1; i++) {
@@ -96,12 +107,15 @@ int main() {
 	  }else continue;
   }
   
+  /*
+   with the brands' indexs, find matching value with that indexs in the price vector. 
+   After that, accumulate that values and divide by total numbers that counted to get the average price.
+  */
   float totalAbc=0.0;
   float totalXYZ=0.0;
   
   cout << " " << endl;
   myfile << "\n" ;
-  
   
   for(int i =0; i < vBrandId.size(); i++){
 		totalAbc += vPrice[vBrandId[i]];
@@ -123,6 +137,13 @@ int main() {
   myfile <<"XYZ Brand's average price is " << aveBrand2 << "\n";
   
   
+ //Category's average price
+   /*Since all the vectors size is same, and each sections's data is stored in the matching index,
+	create vectors that store each categories' index 
+	vCategoA : vector that stores A's indexes
+	vCategoB : vector that stores B's indexes
+	vCategoC : vector that stores C's indexes
+  */
   vector<int>vCategoA;
   vector<int>vCategoB;
   vector<int>vCategoC;
@@ -138,6 +159,10 @@ int main() {
 	  }else continue;
   }
   
+   /*
+   with the each categories' indexs, find matching value with that indexs in the price vector. 
+   After that, accumulate that values and divide by total numbers that counted to get the average price.
+  */
 	for(int i =0; i < vCategoA.size(); i++){
 		totalA += vPrice[vCategoA[i]];
 	}
@@ -165,7 +190,14 @@ int main() {
 	myfile <<"C category's average price is " << aveC << "\n";
 	myfile << "\n" ;
 	
+
 	//SKU per a year
+	/*
+	Find each year's index from the vYear
+	v2000 : vector that stores 2000 index
+	v2010 : vector that stores 2010 index
+	v2020 : vector that stores 2020 index
+	*/
 	 vector<int>v2000;
 	 vector<int>v2010;
 	 vector<int>v2020;
@@ -179,6 +211,9 @@ int main() {
 		  }else continue;
 	  }
 	
+	/*
+	By using indexs of each year, find the SKUs that located in the same index in vSKU.
+	*/	
 	  myfile << "2000 (" << v2000.size() <<") : ";
 	  for(int i =0; i < v2000.size(); i++){
 		  if( i == v2000.size()-1) {myfile << vSKU[v2000[i]]<< "\n";}
@@ -208,6 +243,6 @@ int main() {
 	  
 
   cout << endl;
-  myfile.close();
+  myfile.close();  //file write is closed.
 
 }
