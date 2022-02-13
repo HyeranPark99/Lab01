@@ -8,13 +8,14 @@
 ## Sample Test
 
 1. Initial state
+<img src="images/initial.PNG">
 
-2. make lab1 command entetred
+2. make lab1 command entetred & result
+<img src="images/make-lab1.PNG">
 
-3. result
+3. run lab1 => ./lab1
+<img src="images/run lab1.PNG">
 
-4. run lab1 => ./lab1
-
-5. Create result.txt file
+4. Create result.txt file
 
 
