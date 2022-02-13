@@ -1,3 +1,5 @@
+TEXT := $(patsubst %.pdf,%.txt,$(PDF))
+
 all: lab1
 
 lab1: main.o
@@ -8,3 +10,4 @@ main.o: main.cpp
 
 clean:
 	rm -f *o lab1
+	rm -f $(TEXT)
