@@ -10,7 +10,7 @@
 1. Initial state
 <img src="images/initial.PNG">
 
-2. make lab1 command entetred & result
+2. "make lab1" command entetred & result
 <img src="images/make-lab1.PNG">
 
 3. run lab1 => ./lab1
