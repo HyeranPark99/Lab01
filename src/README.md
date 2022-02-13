@@ -5,7 +5,7 @@
 4. you will see the result.txt. 
 
 
-## Sample Test
+## How it works
 
 1. Initial state
 <img src="images/initial.PNG">
@@ -13,9 +13,9 @@
 2. "make lab1" command entetred & result
 <img src="images/make-lab1.PNG">
 
-3. run lab1 => ./lab1
+3. Run lab1 => ./lab1
 <img src="images/run lab1.PNG">
 
-4. Create result.txt file
+4. result.txt file is created
 <p>Please refere the Sample_result.txt for the final result</p>
 
