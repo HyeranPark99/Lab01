@@ -17,5 +17,5 @@
 <img src="images/run lab1.PNG">
 
 4. Create result.txt file
-
+Please refere the Sample_result.txt for the final result
 
