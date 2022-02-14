@@ -1,8 +1,7 @@
 ## How to run
 1. Please enter "make lab1" on your terminal.
 2. You will see lab1 file is created.
-3. run lab1 on your terminal. ex) ./lab1
-4. you will see the result.txt. 
+3. you will see the result.txt. 
 
 
 ## How it works
@@ -11,11 +10,8 @@
 <img src="images/initial.PNG">
 
 2. "make lab1" command entetred & result
-<img src="images/make-lab1.PNG">
+<img src="images/make_lab1.PNG">
 
-3. Run lab1 => ./lab1
-<img src="images/run lab1.PNG">
-
-4. result.txt file is created
+3. result.txt file is created
 <p>Please refere the Sample_result.txt for the final result</p>
 
